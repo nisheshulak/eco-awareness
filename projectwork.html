@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Awareness</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Landing Page Styles */
+        .landing-page {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+        }
+
+        .landing-page h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .enter-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #004d40;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .enter-button:hover {
+            background-color: #00332d;
+        }
+
+        /* Slide Content Styles */
+        .slides {
+            display: none;
+            padding: 20px;
+            background-color: #f4f8fb;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Navigation Button Styles */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .nav-buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #00332d;
+        }
+
+        footer {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Landing Page -->
+    <div class="landing-page" id="landingPage">
+        <div>
+            <h1>Welcome to Eco Awareness 🌍</h1>
+            <p>Your first step towards a greener planet!</p>
+            <button class="enter-button" onclick="enterSite()">Enter Site</button>
+        </div>
+    </div>
+
+    <!-- Slide Content (Initially Hidden) -->
+    <div class="slides active" id="slide1">
+        <h2>Introduction</h2>
+        <p>Eco-awareness is the knowledge and concern about the environment and the impact humans have on it. It involves understanding the importance of protecting natural resources and preserving ecosystems for future generations.</p>
+    </div>
+
+    <div class="slides" id="slide2">
+        <h2>Causes of Environmental Problems</h2>
+        <ul>
+            <li>Deforestation: Cutting down trees leads to loss of habitats and affects climate.</li>
+            <li>Pollution: Industrial waste, plastic waste, and vehicle emissions are harmful to the environment.</li>
+            <li>Climate Change: Human activities such as burning fossil fuels contribute to global warming.</li>
+            <li>Overpopulation: Increased demand for resources strains the Earth's capacity.</li>
+        </ul>
+    </div>
+
+    <div class="slides" id="slide3">
+        <h2>Effects on Nature</h2>
+        <ul>
+            <li>Rising sea levels due to melting ice caps, threatening coastal communities.</li>
+            <li>Loss of biodiversity as species face extinction due to habitat destruction.</li>
+            <li>Health problems like respiratory issues caused by pollution and smog.</li>
+            <li>Extreme weather patterns, such as floods, droughts, and heatwaves, due to climate change.</li>
+        </ul>
+    </div>
+
+    <div class="slides" id="slide4">
+        <h2>What You Can Do to Help</h2>
+        <ul>
+            <li>Reduce, Reuse, and Recycle: Cut down on waste by reusing items and recycling materials like plastic, paper, and glass.</li>
+            <li>Use Renewable Energy: Opt for solar or wind power to reduce your carbon footprint.</li>
+            <li>Plant Trees: Trees absorb carbon dioxide and provide oxygen, improving air quality.</li>
+            <li>Conserve Water: Turn off taps when not in use and fix any leaks to save water.</li>
+            <li>Support Eco-friendly Brands: Purchase products that are sustainable and eco-friendly.</li>
+        </ul>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <button onclick="previousSlide()">Previous</button>
+        <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2025 Eco Awareness | Made by [Nishesh Ulak]</p>
+    </footer>
+
+    <script>
+        let currentSlide = 1;
+
+        function enterSite() {
+            document.getElementById('landingPage').style.display = 'none'; // Hide landing page
+            document.getElementById('slide1').classList.add('active'); // Show first slide
+        }
+
+        function nextSlide() {
+            if (currentSlide < 4) {
+                document.getElementById('slide' + currentSlide).classList.remove('active');
+                currentSlide++;
+                document.getElementById('slide' + currentSlide).classList.add('active');
+            }
+        }
+
+        function previousSlide() {
+            if (currentSlide > 1) {
+                document.getElementById('slide' + currentSlide).classList.remove('active');
+                currentSlide--;
+                document.getElementById('slide' + currentSlide).classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
